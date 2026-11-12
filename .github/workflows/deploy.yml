@@ -66,8 +66,8 @@ jobs:
     runs-on: [self-hosted, Linux, X64]
 
     steps:
-      - name: Deploy tested commit
+      - name: Deploy tested Docker image
         env:
           DEPLOY_SHA: ${{ github.sha }}
         run: |
-          bash /var/www/myapp/deploy.sh "$DEPLOY_SHA"
+          bash /var/www/myapp/deploy-docker.sh "$DEPLOY_SHA"
